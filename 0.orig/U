@@ -19,30 +19,12 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
-    "(warmPlace1|warmPlace2|coldPlace)"
+    wall
     {
         type            noSlip;
     }
-    inlet
-    {
-        type            fixedValue;
-        value           uniform (0 0 20);
-    }
-    outlet
-    {
-        type            zeroGradient;
-    }
-    allBoundaries
-    {
-       type             fixedValue;
-       value            $internalField;
-    }
-    atmosphere
-    {
-        type            zeroGradient;
-    }
 
+    #includeEtc "caseDicts/setConstraintTypes"
 }
-
 
 // ************************************************************************* //

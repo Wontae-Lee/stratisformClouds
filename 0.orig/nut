@@ -20,19 +20,13 @@ internalField   uniform 0;
 
 boundaryField
 {
-    "(warmPlace1|warmPlace2|coldPlace)"
+    wall
     {
         type            nutkWallFunction;
         value           $internalField;
     }
-    "(inlet|outlet|allBoundaries|atmosphere)"
-    {
-        type            fixedValue;
-        value           $internalField;
-    }
 
-
-    
+    #includeEtc "caseDicts/setConstraintTypes"
 }
 
 // ************************************************************************* //

@@ -33,30 +33,15 @@ geometry
         file        "stratisformClouds.obj";
         regions
         {
-            inlet
+            cold
             {
-                name       inlet;
+                name    cold;
             }
-            outlet
+            warm
             {
-                name       outlet;
+                name    warm;
             }
-            atmosphere
-            {
-                name       atmosphere;
-            }
-            coldPlace
-            {
-                name       coldPlace;
-            }
-            warmPlace1
-            {
-                name       warmPlace1;
-            }
-            warmPlace2
-            {
-                name       warmPlace2;
-            }
+       
 
         }
     }
@@ -135,31 +120,8 @@ castellatedMeshControls
             level      (0 0);
             regions
             {
-                inlet
-                {
-                    level      (1 1);
-                    patchInfo
-                    {
-                        type    patch;
-                    }
-                }
-                outlet
-                {
-                    level      (1 1);
-                    patchInfo
-                    {
-                        type    patch;
-                    }
-                }
-                atmosphere
-                {
-                    level      (1 1);
-                    patchInfo
-                    {
-                        type    patch;
-                    }
-                }
-                coldPlace
+              
+                cold
                 {
                     level      (1 1);
                     patchInfo
@@ -167,7 +129,7 @@ castellatedMeshControls
                         type    wall;
                     }
                 }
-                warmPlace1
+                warm
                 {
                     level      (1 1);
                     patchInfo
@@ -175,14 +137,7 @@ castellatedMeshControls
                         type    wall;
                     }
                 }
-                warmPlace2
-                {
-                    level      (1 1);
-                    patchInfo
-                    {
-                        type    wall;
-                    }
-                }
+             
 
             }
        }

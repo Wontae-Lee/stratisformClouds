@@ -19,20 +19,15 @@ internalField   uniform 0;
 
 boundaryField
 {
-    "(warmPlace1|warmPlace2|coldPlace)"
-    {
-        type            fixedFluxPressure;
-        value           $internalField;
-    }
-    "(inlet|outlet|allBoundaries|atmosphere)"
+    wall
     {
         type            fixedFluxPressure;
         value           $internalField;
     }
 
-
-   
+    #includeEtc "caseDicts/setConstraintTypes"
 }
+
 
 
 // ************************************************************************* //

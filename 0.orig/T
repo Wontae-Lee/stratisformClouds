@@ -17,33 +17,33 @@ dimensions      [0 0 0 1 0 0 0];
 
 internalField   uniform 290;
 
+
 boundaryField
 {
-  
-    coldPlace
+    cold
     {
         type            fixedValue;
-        value           uniform 290;
+        value           uniform 301;
     }
-    warmPlace1
-    {
-        type            fixedValue;
-        value           uniform 300;
-    }
-    warmPlace2
+    warm
     {
         type            fixedValue;
         value           uniform 300;
     }
-    "(inlet|outlet|allBoundaries|atmosphere)"
+    inlet
     {
-        type            fixedValue;
-        value           $internalField;
+        type            zeroGradient;
     }
-    
-    
+    outlet
+    {
+        type            zeroGradient;
+    }
+    walls
+    {
+        type            zeroGradient;
+    }
 
-    
+    #includeEtc "caseDicts/setConstraintTypes"
 }
 
 // ************************************************************************* //

@@ -20,19 +20,13 @@ internalField   uniform 1e-5;
 
 boundaryField
 {
-    "(warmPlace1|warmPlace2|coldPlace)"
+    wall
     {
         type            kqRWallFunction;
         value           $internalField;
     }
-    "(inlet|outlet|allBoundaries|atmosphere)"
-    {
-        type            fixedValue;
-        value           $internalField;
-    }
 
-
-    
+    #includeEtc "caseDicts/setConstraintTypes"
 }
 
 

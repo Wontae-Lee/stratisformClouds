@@ -20,22 +20,15 @@ internalField   uniform 0;
 
 boundaryField
 {
-    "(warmPlace1|warmPlace2|coldPlace)"
+    wall
     {
         type            compressible::alphatJayatillekeWallFunction;
-        Prt             0;
+        Prt             0.85;
         value           $internalField;
     }
-    "(inlet|outlet|allBoundaries|atmosphere)"
-    {
-        type            calculated;
-        value           uniform 0;
-    }
 
-
-  
+    #includeEtc "caseDicts/setConstraintTypes"
 }
-
 
 
 // ************************************************************************* //

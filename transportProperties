@@ -8,13 +8,27 @@
 FoamFile
 {
     format      ascii;
-    class       uniformDimensionedScalarField;
-    location    "constant";
-    object      pRef;
+    class       dictionary;
+    object      transportProperties;
 }
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [1 -1 -2 0 0 0 0];
-value           1e5;
+transportModel Newtonian;
+
+// Laminar viscosity
+nu              [0 2 -1 0 0 0 0] 1e-03;
+
+// Thermal expansion coefficient
+beta            [0 0 0 -1 0 0 0] 1e-03;
+
+// Reference temperature
+TRef            [0 0 0 1 0 0 0] 300;
+
+// Laminar Prandtl number
+Pr              [0 0 0 0 0 0 0] 1.0;
+
+// Turbulent Prandtl number
+Prt             [0 0 0 0 0 0 0] 1.0;
 
 // ************************************************************************* //

@@ -15,17 +15,17 @@ FoamFile
 
 convertToMeters 1;
 
-xmin -1500;
-xmax  1500;
-ymin -500;
-ymax  1500;
-zmin -1500;
-zmax  1500;
+xmin -500;
+xmax  500;
+ymin 0;
+ymax  500;
+zmin -500;
+zmax  500;
 
 
-dx 100;
-dy 100;
-dz 100;
+dx 50;
+dy 50;
+dz 50;
 
 lx #calc "$xmax - $xmin";
 ly #calc "$ymax - $ymin";
@@ -59,20 +59,35 @@ edges
 
 boundary
 (
-    allBoundaries
+    walls
     {
-        type patch;
+        type wall;
         faces
         (
             (2 6 5 1)
             (1 5 4 0)
             (0 4 7 3)
             (3 7 6 2)
-            (4 5 6 7)
-            (0 3 2 1)
         );
     }
-  
+    inlet
+    {
+        type wall;
+        faces
+        (
+            (4 5 6 7)
+           
+        );
+    }
+    outlet
+    {
+        type wall;
+        faces
+        (
+            (0 3 2 1)
+           
+        );
+    }
 );
 
 

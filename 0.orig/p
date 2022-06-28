@@ -19,19 +19,14 @@ internalField   uniform 0;
 
 boundaryField
 {
-    "(warmPlace1|warmPlace2|coldPlace)"
-    {
-        type            calculated;
-        value           $internalField;
-    }
-    "(inlet|outlet|allBoundaries|atmosphere)"
+    wall
     {
         type            calculated;
         value           $internalField;
     }
 
-
-   
+    #includeEtc "caseDicts/setConstraintTypes"
 }
+
 
 // ************************************************************************* //
