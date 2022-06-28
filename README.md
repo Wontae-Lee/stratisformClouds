@@ -7,18 +7,20 @@
 
 unit: meter <br>
 
-x: (-500 < x < 500) <br>
-y: ( 0   < y < 500) <br>
-z: (-500 < y < 500) <br>
+* x: (-500 < x < 500) <br>
+* y: ( 0   < y < 500) <br>
+* z: (-500 < y < 500) <br>
 
-Red color: warm place
-Blue color: cold place
+* Red color: warm place
+* Blue color: cold place
 
 # 2. Fluids
 
 gas: mixture
 
 # 3. Animation
+
+* Target: Temperature <br>
 
 
 https://user-images.githubusercontent.com/72776658/176170391-21c96ab8-5783-4da1-bde4-e03659e18aba.mp4
