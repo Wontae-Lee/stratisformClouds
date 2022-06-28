@@ -10,42 +10,39 @@ FoamFile
     format      ascii;
     class       dictionary;
     location    "system";
-    object      controlDict;
+    object      setFieldsDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     buoyantPimpleFoam;
 
-startFrom       startTime;
 
-startTime       110;
+xminFluid  -500;
+xmaxFluid  500;
+yminFluid  0;
+ymaxFluid  500;
+zminFluid  0;
+zmaxFluid  500;
 
-stopAt          endTime;
 
-endTime         2000;
 
-deltaT          0.1;
 
-writeControl    timeStep;
+defaultFieldValues
+(
+    volScalarFieldValue T 290
+);
 
-writeInterval   10;
+regions
+(
+    boxToCell
+    {
+        box ($xminFluid $yminFluid $zminFluid) ($xmaxFluid $ymaxFluid $zmaxFluid);
+        fieldValues
+        (
+            volScalarFieldValue T 300
+        );
+    }
+);
 
-purgeWrite      0;
 
-writeFormat     ascii;
-
-writePrecision  6;
-
-writeCompression off;
-
-timeFormat      general;
-
-timePrecision   6;
-
-runTimeModifiable true;
-
-adjustTimeStep  no;
-
-maxCo           0.5;
 
 // ************************************************************************* //

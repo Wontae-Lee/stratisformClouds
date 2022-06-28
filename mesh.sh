@@ -15,4 +15,5 @@ createPatch -overwrite
 # renumber the mesh
 renumberMesh -overwrite
 
+setFields
 #------------------------------------------------------------------------------

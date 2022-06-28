@@ -23,7 +23,7 @@ boundaryField
     cold
     {
         type            fixedValue;
-        value           uniform 301;
+        value           uniform 290;
     }
     warm
     {
@@ -32,15 +32,18 @@ boundaryField
     }
     inlet
     {
-        type            zeroGradient;
+        type            fixedValue;
+        value           uniform 290;
     }
     outlet
     {
-        type            zeroGradient;
+        type            fixedValue;
+        value           uniform 290;
     }
     walls
     {
-        type            zeroGradient;
+        type            fixedValue;
+        value           uniform 290;
     }
 
     #includeEtc "caseDicts/setConstraintTypes"
